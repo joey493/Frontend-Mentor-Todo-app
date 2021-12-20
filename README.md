@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/joey493/Frontend-Mentor-Todo-app)
-- Live Site URL: [Add live site URL here](https://adoring-boyd-86d3cc.netlify.app/)
+- Solution URL: [solution URL](https://github.com/joey493/Frontend-Mentor-Todo-app)
+- Live Site URL: [live site](https://adoring-boyd-86d3cc.netlify.app/)
 
 ### Built with
 
