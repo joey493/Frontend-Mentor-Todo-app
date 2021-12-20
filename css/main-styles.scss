@@ -1,0 +1,168 @@
+/*Import themes*/
+@use './themes/dark-theme' as dark;
+@use './themes/light-theme' as light;
+
+/* Import JosefinSans Font */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+// variables
+$pointer: pointer;
+$main-padding: 16px 20px;
+$radius: 5px;
+
+$Bright-Blue: hsl(220, 98%, 61%);
+$gradient: linear-gradient(135deg,hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+/* Start Global */
+html {
+    font-size: 18px;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: .9rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    padding: 60px 15px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: repeat(2, auto) 1fr;
+    gap: 1.5em;
+
+    /* Small Screens */
+    @media (min-width: 375px) {
+        width: 360px;
+    }
+
+    /* large Screens */
+    @media (min-width: 768px) {
+        width: 500px;
+    }
+}
+
+ul {
+    list-style: none;
+    padding: 0 ;
+    margin: 0;
+}
+/* End Global */
+
+/* Todo */
+.todo {
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: .3s ease-in-out;
+
+    /* Header */
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        color: light.$Very-Light-Gray;
+
+        h1 {
+            margin: 0;
+            letter-spacing: .8rem;
+        }
+    }
+
+    /* Add tasks */
+    .addnew {
+        padding: $main-padding;
+        border-radius: $radius;
+
+        input {
+            background-color: transparent;
+            border: none;
+            width: 100%;
+            cursor: $pointer;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    /* Tasks */
+    .tasks {
+        border-radius: $radius;
+
+        ul:first-child li{
+            padding: $main-padding;
+            margin: 0;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 10px;
+            position: relative;
+
+            label {
+            cursor: $pointer;
+            }
+
+            .cross {
+                position: absolute;
+                top: 50%;
+                right: 20px;
+                transform: translate(0,-50%);
+                opacity: 0;
+                transition: .2s ease-in-out;
+            }
+
+            /* cross icon hover effect */
+            &:hover .cross {
+                opacity: 1;
+                cursor: $pointer;
+            }
+        }
+    }
+
+    /* State */
+    .state {
+        padding: $main-padding;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        justify-content: space-between;
+        font-size: .8rem;
+        border-radius: $radius;
+
+        ul {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            gap: 1em;
+
+            li {
+                cursor: $pointer;
+            }
+        }
+        .clear-completed:hover {
+            cursor: $pointer;
+        }
+    }
+}
+
+/* footer */
+.attribution {
+    font-size: .7rem; 
+    text-align: center;
+    margin-top: auto;
+
+    a {
+        color: $Bright-Blue;
+    }
+}
+
+.completed {
+    text-decoration: line-through;
+    color: dark.$Dark-Grayish-Blue !important;
+}
+

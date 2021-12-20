@@ -1,0 +1,81 @@
+/* Dark Theme */
+
+// variables
+$Very-Dark-Blue: hsl(235, 21%, 11%);
+$Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+$Light-Grayish-Blue: hsl(234, 39%, 85%);
+$Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
+$Dark-Grayish-Blue: hsl(234, 11%, 52%);
+$Very-Dark-Grayish-Blue1: hsl(233, 14%, 35%);
+$Very-Dark-Grayish-Blue2: hsl(237, 14%, 26%);
+$caret-color: #4036BD;
+
+// helper classes
+/* addTasks & tasks & state background */
+%back-color {
+    background-color: $Very-Dark-Desaturated-Blue;
+}
+
+/* tasks textColor & state hover effect */
+%hover-color {
+    color: $Light-Grayish-Blue-hover;
+}
+
+%shadow {
+    box-shadow: 0px 10px 20px hsl(0deg 0% 0% / 42%);
+}
+
+
+.dark-theme {
+    // Body background color
+    background-color: $Very-Dark-Blue;
+
+    .todo {
+        // Background for Small screens
+        @media (min-width: 375px) { 
+            background-image: url('../images/bg-mobile-dark.jpg');
+        }
+
+        // Background for large screens
+        @media (min-width: 576px) { 
+                background-image: url('../images/bg-desktop-dark.jpg');
+        }
+
+        .container {
+            .addnew {
+                @extend %back-color;
+                @extend %shadow;
+
+                input {
+                    caret-color: $caret-color;
+                    color: $Light-Grayish-Blue;
+                }
+            }
+
+            .tasks {
+                @extend %back-color;
+                @extend %shadow;
+
+                ul:first-child li {
+                    @extend %hover-color;
+                    border-bottom: 1px solid $Very-Dark-Grayish-Blue1;
+                }
+            }
+
+            .state {
+                @extend %back-color;
+                color: $Very-Dark-Grayish-Blue1;
+
+                ul li:hover {
+                    @extend %hover-color;
+                }
+
+                .clear-completed:hover {
+                    @extend %hover-color;
+                }
+
+                
+            }
+        }
+    }
+}

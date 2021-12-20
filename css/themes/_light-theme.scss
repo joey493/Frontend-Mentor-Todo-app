@@ -1,0 +1,91 @@
+/* Dark Theme */
+// variables
+$Very-Light-Gray: hsl(0, 0%, 98%);
+$Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+$Light-Grayish-Blue: hsl(233, 11%, 84%);
+$Dark-Grayish-Blue: hsl(236, 9%, 61%);
+$Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+
+//  helper classes
+/* addTasks & tasks & state background */
+%back-color {
+    background-color: $Very-Light-Gray;
+}
+
+/* tasks textColor & state hover effect */
+%hover-color {
+    color: $Very-Dark-Grayish-Blue;
+}
+
+%shadow {
+    box-shadow:  0px 10px 20px rgb(128 128 128 / 25%);
+}
+
+%state-color {
+    color: $Dark-Grayish-Blue;
+}
+
+.light-theme {
+    // Body background color
+    background-color: $Very-Light-Grayish-Blue;
+
+    .todo {
+        // Background for Small screens
+        @media (min-width: 375px) { 
+            background-image: url('../images/bg-mobile-light.jpg');
+        }
+
+        // Background for large screens
+        @media (min-width: 576px) { 
+            background-image: url('../images/bg-desktop-light.jpg');
+        }
+
+        .container {
+            header {
+                color: $Very-Light-Gray;
+            }
+            
+            .addnew {
+                @extend %back-color;
+                @extend %shadow;
+
+                input {
+                    color: $Very-Dark-Grayish-Blue;
+                }
+            }
+
+            .tasks {
+                @extend %back-color;
+                @extend %shadow;
+
+                ul:first-child li {
+                    @extend %hover-color;
+                    border-bottom: 1px solid #ddd;
+
+                }
+
+                span {
+                    @extend %state-color;
+                }
+
+                .check {
+                    border: 2px solid #ddd;
+                }
+            }
+
+            .state {
+                @extend %back-color;
+                color: $Very-Dark-Grayish-Blue;
+
+                ul li:hover {
+                    @extend %state-color;
+                    @extend %hover-color;
+                }
+
+                .clear-completed {
+                    @extend %hover-color;
+                }
+            }
+        }
+    }
+}
