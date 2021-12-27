@@ -48,6 +48,7 @@ const updateUI = (todo) => {
     // create task and set Id
     const task = document.createElement('li');
     task.setAttribute('id', todo.id)
+    task.setAttribute('draggable', true)
 
     const rmBtn = delTask(() => {
         store.dispatch(removeTodo(todo.id))
@@ -74,8 +75,14 @@ const showTodos = (arr) => {
     const stateBtns = document.querySelectorAll('.state ul li')
 
     stateBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
             document.querySelector('.tasks-list').innerHTML = ''
+
+            // toggle active class
+            stateBtns.forEach( stateBtn => {
+                stateBtn.classList.remove('active')
+            })
+            e.currentTarget.classList.add('active')
 
             switch (btn.dataset.show) {
                 case 'all':

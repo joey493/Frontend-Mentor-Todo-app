@@ -1,1 +1,239 @@
-@import"https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap";.dark-theme .todo .container .state,.dark-theme .todo .container .tasks,.dark-theme .todo .container .addnew{background-color:#25273c}.dark-theme .todo .container .state .clear-completed:hover,.dark-theme .todo .container .state ul li:hover,.dark-theme .todo .container .tasks ul:first-child li{color:#e4e5f1}.dark-theme .todo .container .tasks,.dark-theme .todo .container .addnew{box-shadow:0px 10px 20px rgba(0,0,0,.42)}.dark-theme{background-color:#161722}@media(min-width: 375px){.dark-theme .todo{background-image:url("../images/bg-mobile-dark.jpg")}}@media(min-width: 576px){.dark-theme .todo{background-image:url("../images/bg-desktop-dark.jpg")}}.dark-theme .todo .container .addnew input{caret-color:#4036bd;color:#cacde8}.dark-theme .todo .container .tasks ul:first-child li{border-bottom:1px solid #4d5066}.dark-theme .todo .container .state{color:#4d5066}.light-theme .todo .container .state,.light-theme .todo .container .tasks,.light-theme .todo .container .addnew{background-color:#fafafa}.light-theme .todo .container .state .clear-completed,.light-theme .todo .container .state ul li:hover,.light-theme .todo .container .tasks ul:first-child li{color:#484b6a}.light-theme .todo .container .tasks,.light-theme .todo .container .addnew{box-shadow:0px 10px 20px rgba(128,128,128,.25)}.light-theme .todo .container .state ul li:hover,.light-theme .todo .container .tasks span{color:#9394a5}.light-theme{background-color:#e4e5f1}@media(min-width: 375px){.light-theme .todo{background-image:url("../images/bg-mobile-light.jpg")}}@media(min-width: 576px){.light-theme .todo{background-image:url("../images/bg-desktop-light.jpg")}}.light-theme .todo .container header{color:#fafafa}.light-theme .todo .container .addnew input{color:#484b6a}.light-theme .todo .container .tasks ul:first-child li{border-bottom:1px solid #ddd}.light-theme .todo .container .tasks .check{border:2px solid #ddd}.light-theme .todo .container .state{color:#484b6a}html{font-size:18px}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}body{font-family:"Josefin Sans",sans-serif;margin:0;padding:0;font-size:.9rem;min-height:100vh;display:flex;flex-direction:column}.container{padding:60px 15px;margin:0 auto;display:grid;grid-template-rows:repeat(2, auto) 1fr;gap:1.5em}@media(min-width: 375px){.container{width:360px}}@media(min-width: 768px){.container{width:500px}}ul{list-style:none;padding:0;margin:0}.todo{background-repeat:no-repeat;background-size:contain;transition:.3s ease-in-out}.todo header{display:grid;grid-template-columns:1fr auto;color:#fafafa}.todo header h1{margin:0;letter-spacing:.8rem}.todo .addnew{padding:16px 20px;border-radius:5px}.todo .addnew input{background-color:transparent;border:none;width:100%;cursor:pointer}.todo .addnew input:focus{outline:none}.todo .tasks{border-radius:5px}.todo .tasks ul:first-child li{padding:16px 20px;margin:0;display:grid;grid-template-columns:auto 1fr;gap:10px;position:relative}.todo .tasks ul:first-child li label{cursor:pointer}.todo .tasks ul:first-child li .cross{position:absolute;top:50%;right:20px;transform:translate(0, -50%);opacity:0;transition:.2s ease-in-out}.todo .tasks ul:first-child li:hover .cross{opacity:1;cursor:pointer}.todo .state{padding:16px 20px;display:grid;grid-template-columns:repeat(3, auto);justify-content:space-between;font-size:.8rem;border-radius:5px}.todo .state ul{display:grid;grid-template-columns:repeat(3, auto);gap:1em}.todo .state ul li{cursor:pointer}.todo .state .clear-completed:hover{cursor:pointer}.attribution{font-size:.7rem;text-align:center;margin-top:auto}.attribution a{color:#3a7bfd}.completed{text-decoration:line-through;color:#777a92 !important}/*# sourceMappingURL=main-styles.css.map */
+/*Import themes*/
+/* Import JosefinSans Font */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+/* Dark Theme */
+/* addTasks & tasks & state background */
+.dark-theme .todo .container .state, .dark-theme .todo .container .tasks, .dark-theme .todo .container .addnew {
+  background-color: #25273c;
+}
+
+/* tasks textColor & state hover effect */
+.dark-theme .todo .container .state .clear-completed:hover, .dark-theme .todo .container .state ul li:hover, .dark-theme .todo .container .tasks ul:first-child li {
+  color: #e4e5f1;
+}
+
+.dark-theme .todo .container .tasks, .dark-theme .todo .container .addnew {
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.42);
+}
+
+.dark-theme {
+  background-color: #161722;
+}
+@media (min-width: 375px) {
+  .dark-theme .todo {
+    background-image: url("../images/bg-mobile-dark.jpg");
+  }
+}
+@media (min-width: 576px) {
+  .dark-theme .todo {
+    background-image: url("../images/bg-desktop-dark.jpg");
+  }
+}
+.dark-theme .todo .container .addnew input {
+  caret-color: #4036BD;
+  color: #cacde8;
+}
+.dark-theme .todo .container .tasks ul:first-child li {
+  border-bottom: 1px solid #4d5066;
+}
+.dark-theme .todo .container .state {
+  color: #4d5066;
+}
+.dark-theme .active {
+  color: #e4e5f1;
+}
+
+/* Dark Theme */
+/* addTasks & tasks & state background */
+.light-theme .todo .container .state, .light-theme .todo .container .tasks, .light-theme .todo .container .addnew {
+  background-color: #fafafa;
+}
+
+/* tasks textColor & state hover effect */
+.light-theme .todo .container .state .clear-completed, .light-theme .todo .container .state ul li:hover, .light-theme .todo .container .tasks ul:first-child li {
+  color: #484b6a;
+}
+
+.light-theme .todo .container .tasks, .light-theme .todo .container .addnew {
+  box-shadow: 0px 10px 20px rgba(128, 128, 128, 0.25);
+}
+
+.light-theme .todo .container .state ul li:hover, .light-theme .todo .container .tasks span {
+  color: #9394a5;
+}
+
+.light-theme {
+  background-color: #e4e5f1;
+}
+@media (min-width: 375px) {
+  .light-theme .todo {
+    background-image: url("../images/bg-mobile-light.jpg");
+  }
+}
+@media (min-width: 576px) {
+  .light-theme .todo {
+    background-image: url("../images/bg-desktop-light.jpg");
+  }
+}
+.light-theme .todo .container header {
+  color: #fafafa;
+}
+.light-theme .todo .container .addnew input {
+  color: #484b6a;
+}
+.light-theme .todo .container .tasks ul:first-child li {
+  border-bottom: 1px solid #ddd;
+}
+.light-theme .todo .container .tasks .check {
+  border: 2px solid #ddd;
+}
+.light-theme .todo .container .state {
+  color: #484b6a;
+}
+.light-theme .active {
+  color: #9394a5;
+}
+
+/* Start Global */
+html {
+  font-size: 18px;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  padding: 60px 15px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: repeat(2, auto) 1fr;
+  gap: 1.5em;
+  /* Small Screens */
+  /* large Screens */
+}
+@media (min-width: 375px) {
+  .container {
+    width: 360px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    width: 500px;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* End Global */
+/* Todo */
+.todo {
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: 0.3s ease-in-out;
+  /* Header */
+  /* Add tasks */
+  /* Tasks */
+  /* State */
+}
+.todo header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  color: #fafafa;
+}
+.todo header h1 {
+  margin: 0;
+  letter-spacing: 0.8rem;
+}
+.todo .addnew {
+  padding: 16px 20px;
+  border-radius: 5px;
+}
+.todo .addnew input {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+.todo .addnew input:focus {
+  outline: none;
+}
+.todo .tasks {
+  border-radius: 5px;
+}
+.todo .tasks ul:first-child li {
+  padding: 16px 20px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  position: relative;
+  /* cross icon hover effect */
+}
+.todo .tasks ul:first-child li label {
+  cursor: pointer;
+}
+.todo .tasks ul:first-child li .cross {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translate(0, -50%);
+  opacity: 0;
+  transition: 0.2s ease-in-out;
+}
+.todo .tasks ul:first-child li:hover .cross {
+  opacity: 1;
+  cursor: pointer;
+}
+.todo .state {
+  padding: 16px 20px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-between;
+  font-size: 0.8rem;
+  border-radius: 5px;
+}
+.todo .state ul {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 1em;
+}
+.todo .state ul li {
+  cursor: pointer;
+}
+.todo .state .clear-completed:hover {
+  cursor: pointer;
+}
+
+/* footer */
+.attribution {
+  font-size: 0.7rem;
+  text-align: center;
+  margin-top: auto;
+}
+.attribution a {
+  color: #3a7bfd;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #777a92 !important;
+}
+
+/*# sourceMappingURL=main-styles.css.map */
